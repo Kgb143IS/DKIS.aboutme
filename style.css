@@ -1,0 +1,180 @@
+:root {
+  --bg: #f5f5f5;
+  --paper: #ffffff;
+  --text: #1f2328;
+  --muted: #5b6168;
+  --line: #e3e5e8;
+  --link: #1a5fb4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14161a;
+    --paper: #1c1f24;
+    --text: #e8eaed;
+    --muted: #9aa0a6;
+    --line: #2e3238;
+    --link: #7ab2ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    "Segoe UI",
+    "Inter",
+    system-ui,
+    -apple-system,
+    Roboto,
+    Arial,
+    sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cv {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 12px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+/* Header */
+.cv-header {
+  padding: 8px 12px 20px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.title-cv {
+  text-align: left;
+  padding: 8px 12px 20px;
+}
+.cv-header h1 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.cv-header .title {
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+.cv-header .contact {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Sections */
+section {
+  padding: 18px 12px;
+  border-top: 1px solid var(--line);
+}
+h2 {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+p {
+  margin: 0 0 4px;
+}
+ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 2px;
+}
+
+.item + .item {
+  margin-top: 16px;
+}
+.item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.time,
+.muted {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.skills {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+
+@media (max-width: 520px) {
+  body {
+    padding: 12px 8px;
+  }
+  .item-head {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+/* In ra PDF: Ctrl/Cmd + P → Save as PDF */
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+    color: #000;
+  }
+  .cv {
+    border: 0;
+    border-radius: 0;
+    max-width: none;
+    background: #fff;
+  }
+  section {
+    break-inside: avoid;
+  }
+  a {
+    color: inherit;
+  }
+}
+.university {
+  height: 50px;
+  /* border: 1px solid black; */
+  display: flex;
+  align-items: center;
+}
+.university span {
+  text-align: right;
+}
+.avatar {
+  object-fit: cover;
+  width: 150px;
+  height: 200px;
+  object-position: 0px 0px;
+  border-radius: 10%;
+  border: 2px solid rgba(0, 0, 0, 0.153);
+  margin-right: 40px;
+  margin-left: 10px;
+}
